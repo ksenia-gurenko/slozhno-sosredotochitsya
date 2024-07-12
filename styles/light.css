@@ -9,4 +9,31 @@
     Так стили написанные ниже будут иметь больший вес,
     чем стили в медиазапросе предпочтений пользователя
   */
+  --background-color: #fff1f7;
+  --title-color: #ffc2e6;
+  --main-text-color: #353430;
+  --highlighted-text-color: #353430;
+  --accent-color: #ff8dcb;
+  --decor-color: #353430;
+  --translucent-color: rgba(50, 49, 45, 0.4);
+  --REC-decor-color: transparent;
+}
+
+/* Остальные стили */
+
+/*.theme_light .decor {
+  display: none;
+}*/
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color: #fff1f7;
+    --title-color: #ffc2e6;
+    --main-text-color: #353430;
+    --highlighted-text-color: #353430;
+    --accent-color: #ff8dcb;
+    --decor-color: #353430;
+    --translucent-color: rgba(50, 49, 45, 0.4);
+    --REC-decor-color: transparent;
+  }
 }

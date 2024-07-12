@@ -2,4 +2,343 @@
 
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+
+  background-image: var(--cover-image);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: 1024px 100vh;
+  background-attachment: fixed;
+  max-width: 1024px;
+  margin: auto;
+}
+
+body {
+  font-family: var(--main-font, sans-serif);
+  font-weight: var(--main-font-weight 400);
+  font-size: var(--main-font-size, 18px);
+  background-color: var(--background-color);
+  color: var(--main-text-color);
+  line-height: 23.4px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  justify-content: center;
+}
+
+.header__theme-menu-button {
+  background-color: transparent;
+  cursor: pointer;
+  user-select: none;
+  width: 70px;
+  height: 26px;
+  font-family: var(--main-font, sans-serif);
+  font-weight: var(--main-font-weight 400);
+  font-size: var(--main-font-size, 18px);
+  text-transform: lowercase;
+  line-height: 18px; /* or 100% */
+  text-align: center;
+  color: var(--decor-color);
+  border: none;
+}
+
+.header__theme-menu-button_active {
+  pointer-events: none;
+  border: 1px solid var(--decor-color);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+  border-bottom: 1px solid var(--decor-color);
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--translucent-color);
+}
+
+.decor {
+  /* REC */
+  position: absolute;
+  right: 10px;
+  top: 3px;
+  font-family: var(--main-font, sans-serif);
+  font-weight: var(--main-font-weight, 400);
+  font-size: var(--main-font-size, 18px);
+  line-height: 25px; /* or 139% */
+  color: var(--REC-decor-color);
+}
+
+.decor::after {
+  content: '';
+  display: inline-block;
+  height: 9px;
+  width: 9px;
+  background-color: var(--REC-decor-color);
+  border-radius: 50%;
+}
+
+.cover {
+  display: grid;
+  position: relative;
+  margin: 20px;
+  min-block-size: 97vh;
+}
+
+.cover::before {
+  content: '';
+  position: absolute;
+  border-top: 1px solid var(--decor-color);
+  border-right: 1px solid var(--decor-color);
+  inline-size: 25px;
+  block-size: 25px;
+  inset-inline-end: 0;
+  inset-block-start: 0;
+}
+
+.cover::after {
+  content: '';
+  position: absolute;
+  border-bottom: 1px solid var(--decor-color);
+  border-left: 1px solid var(--decor-color);
+  inline-size: 25px;
+  block-size: 25px;
+  inset-block-end: 0;
+}
+
+.cover_title {
+  justify-self: center;
+  margin-inline-start: -20px;
+  font-family: var(--main-font, sans-serif);
+  font-weight: var(--accent-font-weight, 700);
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  line-height: 82.5%; /* identical to box height, or 130px */
+  color: var(--title-color);
+  text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.title-decor {
+  font-family: var(--main-font, sans-serif);
+  font-weight: var(--accent-font-weight, 700);
+  font-size: var(--main-font-size, 18px);
+  line-height: 23px; /* or 130% */
+  color: var(--highlighted-text-color);
+  background-color: var(--accent-color);
+}
+
+.cover__description {
+  margin-inline-start: 50%;
+  margin-block-start: 15vh;
+}
+
+.main-section:not(:first-of-type):not(:last-of-type) {
+  margin: 0px 20px 80px 20px;
+}
+
+.main-section:first-of-type {
+  margin: 60px 20px 80px 20px;
+}
+
+.main-section:last-of-type {
+  margin: 0px 20px 60px 20px;
+}
+
+.section_title {
+  font-weight: var(--accent-font-weight, 700);
+  font-size: var(--main-font-size, 18px);
+  color: var(--decor-color);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: start;
+}
+
+.section-why {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 20px;
+}
+
+.column {
+  display: grid;
+  grid-row-start: 1;
+  grid-row-end: 3;
+}
+
+.link {
+  text-shadow: 2px 2px 0 var(--accent-color);
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.link:focus {
+  border: 1px solid var(--main-text-color);
+}
+
+.grid-area-cards-title {
+  grid-area: cards-title;
+}
+
+.grid-area-card-multitasking {
+  grid-area: card-multitasking;
+}
+
+.grid-area-card-meal {
+  grid-area: card-meal;
+}
+
+.grid-area-card-gadgets {
+  grid-area: card-gadgets;
+}
+
+.section-what {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  grid-template-areas:
+    'cards-title . . '
+    'card-multitasking card-meal card-gadgets';
+}
+
+.section-how {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  column-gap: 20px;
+}
+
+.advices-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.item_title {
+  font-weight: var(--main-font-weight, 400);
+  margin-block-start: 20px;
+  margin-block-end: 10px;
+}
+
+.container {
+  width: calc(100vw-40px);
+  max-width: 984px;
+  margin-block-start: 20px;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.images {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 260px 1fr 428px;
+  gap: 20px;
+  height: 1091px;
+}
+
+.image:first-of-type {
+  grid-column: 1/3;
+  grid-row: 1/2;
+}
+
+.image:nth-of-type(2) {
+  grid-column: 3/4;
+  grid-row: 1/3;
+}
+
+.image:nth-of-type(3) {
+  grid-column: 1/2;
+  grid-row: 2/4;
+}
+
+.image:nth-of-type(4) {
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+
+.image:nth-of-type(5) {
+  grid-column: 2/4;
+  grid-row: 3/4;
+}
+
+.footer {
+  display: grid;
+}
+
+.footer_title {
+  justify-self: center;
+  align-self: center;
+  padding-block-start: 0vh;
+  margin-inline-start: 0px;
+}
+
+@media (width < 768px) {
+  .cover_title {
+    font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  }
+
+  .cover__description {
+    margin-inline-start: 10px;
+    margin-inline-end: 10px;
+    margin-block-start: 10vh;
+  }
+
+  .main-section:not(:first-of-type):not(:last-of-type) {
+    margin: 0px 10px 50px 10px;
+  }
+
+  .main-section:first-of-type {
+    margin: 40px 10px 50px 10px;
+  }
+
+  .main-section:last-of-type {
+    margin: 0px 10px 40px 10px;
+  }
+
+  .main-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .images {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .container {
+    width: calc(100vw-20px);
+  }
+}
+
+@media (width < 1024px) {
+  .header__theme-menu-list {
+    flex-direction: column;
+    align-items: end;
+  }
+}
+
+@media (width < 768px) and (width >= 375px) {
+  .header__theme-menu-list {
+    gap: 10px;
+  }
+  .header__theme-menu {
+    padding-block-start: 75px;
+  }
+}
+
+@media (width < 1024px) and (width >= 768px) {
+  .header__theme-menu {
+    padding-block-start: 192px;
+  }
 }
