@@ -83,7 +83,7 @@ body {
   display: grid;
   position: relative;
   margin: 20px;
-  min-block-size: 97vh;
+  block-size: 100vh;
 }
 
 .cover::before {
@@ -108,7 +108,7 @@ body {
 }
 
 .cover_title {
-  justify-self: center;
+  align-self: center;
   margin-inline-start: -20px;
   font-family: var(--main-font, sans-serif);
   font-weight: var(--accent-font-weight, 700);
@@ -130,6 +130,7 @@ body {
 .cover__description {
   margin-inline-start: 50%;
   margin-block-start: 15vh;
+  height: fit-content;
 }
 
 .main-section:not(:first-of-type):not(:last-of-type) {
