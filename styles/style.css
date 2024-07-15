@@ -68,6 +68,8 @@ body {
   font-size: var(--main-font-size, 18px);
   line-height: 25px; /* or 139% */
   color: var(--REC-decor-color);
+  inset-inline-end: 29px;
+  inset-block-start: 20px;
 }
 
 .decor::after {
@@ -76,14 +78,16 @@ body {
   height: 9px;
   width: 9px;
   background-color: var(--REC-decor-color);
+  box-shadow: 0px 0px 4px 2px var(--REC-decor-color);
   border-radius: 50%;
+
 }
 
 .cover {
   display: grid;
   position: relative;
-  margin: 20px;
-  block-size: 100vh;
+  padding: 20px;
+  height: 100vh;
 }
 
 .cover::before {
@@ -91,10 +95,10 @@ body {
   position: absolute;
   border-top: 1px solid var(--decor-color);
   border-right: 1px solid var(--decor-color);
-  inline-size: 25px;
-  block-size: 25px;
-  inset-inline-end: 0;
-  inset-block-start: 0;
+  width: 25px;
+  height: 25px;
+  inset-inline-end: 20px;
+  inset-block-start: 20px;
 }
 
 .cover::after {
@@ -102,14 +106,20 @@ body {
   position: absolute;
   border-bottom: 1px solid var(--decor-color);
   border-left: 1px solid var(--decor-color);
-  inline-size: 25px;
-  block-size: 25px;
-  inset-block-end: 0;
+  width: 25px;
+  height: 25px;
+  inset-inline-start: 20px;
+  inset-block-end: 20px;
+}
+
+.cover_title__container {
+  font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  align-self: center;
+  margin-inline-start: -20px;
 }
 
 .cover_title {
-  align-self: center;
-  margin-inline-start: -20px;
+  padding-block-start: 0.7em;
   font-family: var(--main-font, sans-serif);
   font-weight: var(--accent-font-weight, 700);
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
@@ -129,7 +139,7 @@ body {
 
 .cover__description {
   margin-inline-start: 50%;
-  margin-block-start: 15vh;
+  margin-block-start: 7vh;
   height: fit-content;
 }
 
@@ -241,9 +251,10 @@ body {
 .images {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: 260px 1fr 428px;
+  grid-template-rows: calc(260 / 315) fr 1fr calc(428 / 315) fr;
   gap: 20px;
-  height: 1091px;
+  min-height: 1vh;
+  max-height: 1024px;
 }
 
 .image:first-of-type {
@@ -278,19 +289,49 @@ body {
 .footer_title {
   justify-self: center;
   align-self: center;
-  padding-block-start: 0vh;
-  margin-inline-start: 0px;
+  padding-block-start: 0;
 }
 
 @media (width < 768px) {
+  .cover {
+    padding: 10px;
+  }
+
+  .cover::before {
+    inset-inline-end: 10px;
+    inset-block-start: 10px;
+  }
+
+  .cover::after {
+    inset-inline-start: 10px;
+    inset-block-end: 10px;
+  }
+
+  .decor {
+    /* REC */
+    position: absolute;
+    right: 10px;
+    top: 3px;
+    inset-inline-end: 19px;
+    inset-block-start: 10px;
+  }
+
   .cover_title {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+    margin-inline-start: 20px;
+    margin-block-start: -0.7em;
   }
 
   .cover__description {
-    margin-inline-start: 10px;
-    margin-inline-end: 10px;
-    margin-block-start: 10vh;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    margin-block-start: 25px;
+  }
+
+  .main-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
 
   .main-section:not(:first-of-type):not(:last-of-type) {
@@ -305,20 +346,24 @@ body {
     margin: 0px 10px 40px 10px;
   }
 
-  .main-section {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  .container {
+    margin-block-start: 0px;
   }
 
   .images {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    max-height: 100%;
   }
-  
+
   .container {
     width: calc(100vw-20px);
+  }
+
+  .footer_title {
+    margin-inline-start: 0px;
+    margin-block-start: 0;
   }
 }
 
@@ -334,12 +379,30 @@ body {
     gap: 10px;
   }
   .header__theme-menu {
-    padding-block-start: 75px;
+    padding-block-start: 65px;
   }
 }
 
 @media (width < 1024px) and (width >= 768px) {
   .header__theme-menu {
-    padding-block-start: 192px;
+    padding-block-start: 172px;
+  }
+
+  .cover_title {
+    margin-block-start: -14vh;
+  }
+
+  .cover__description {
+    margin-block-start: 80px;
+  }
+
+  .section-what {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .grid-area-cards-title {
+    width: 30%;
   }
 }
