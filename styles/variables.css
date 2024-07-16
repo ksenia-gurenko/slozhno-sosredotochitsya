@@ -8,4 +8,13 @@
   --title-font-size: clamp(7.25rem, 5.8902rem + 6.1286vw, 9.8125rem);
   --main-font-weight: 400;
   --accent-font-weight: 700;
+
+  --background-color: #fff1f7;
+  --title-color: #ffc2e6;
+  --main-text-color: #353430;
+  --highlighted-text-color: #353430;
+  --accent-color: #ff8dcb;
+  --decor-color: #353430;
+  --translucent-color: rgba(50, 49, 45, 0.4);
+  --REC-decor-color: transparent;
 }

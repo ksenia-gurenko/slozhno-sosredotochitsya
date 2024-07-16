@@ -19,12 +19,6 @@
   --REC-decor-color: transparent;
 }
 
-/* Остальные стили */
-
-/*.theme_light .decor {
-  display: none;
-}*/
-
 @media (prefers-color-scheme: light) {
   :root {
     --background-color: #fff1f7;
