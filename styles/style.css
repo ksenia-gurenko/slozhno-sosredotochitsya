@@ -356,6 +356,12 @@
   margin-block-end: 10px;
 }
 
+@media (width < 1024px) and (width >= 768px) {
+  .p_letter-spacing {
+    letter-spacing: 0.02em;
+  }
+}
+
 .image {
   width: 100%;
   height: 100%;
