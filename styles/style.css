@@ -326,7 +326,7 @@
   width: calc((1024px - 80px) / 3);
 }
 
-@media (width < 768px) {
+@media (width < 1024px) {
   .what-card {
     width: 100%;
   }
