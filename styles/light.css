@@ -31,5 +31,7 @@
     --decor-color: #353430;
     --translucent-color: rgba(50, 49, 45, 0.4);
     --REC-decor-color: transparent;
+
+    --cover-image: url(../images/cover-image-light.png);
   }
 }
